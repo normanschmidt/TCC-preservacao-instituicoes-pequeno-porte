@@ -12,7 +12,6 @@ no código de retorno de cada microserviço (Seção 6.4).
 | --------------------------- | ----------- | ------------------------------------------------------ |
 | `orquestrador.py`           | E1–E9       | Controle do fluxo, encadeamento, logs e decisões       |
 | `admissao.py`               | E2          | MS1 — validação de admissão (ClamAV)                   |
-| `metadados_descritivos.py`  | (inativo)   | Planilha CSV/ODS → Dublin Core XML                     |
 | `empacotamento.py`          | E3, E8      | MS6 — empacotamento BagIt (SIP e AIP)                  |
 | `identificacao.py`          | E4          | MS2 — identificação de formato (DROID/Siegfried)       |
 | `conformidade.py`           | E5          | MS3 — validação de conformidade (JHOVE/veraPDF)        |
@@ -21,9 +20,15 @@ no código de retorno de cada microserviço (Seção 6.4).
 | `eventos.py`                | E2–E10      | MS7 — registro de eventos PREMIS (lxml)                |
 | `replicacao.py`             | E9          | MS8 — armazenamento com replicação (rsync/rclone)      |
 | `verificacao.py`            | E10         | MS5 — verificação periódica de integridade             |
+
+## Outros arquivos auxiliares 
+
+| Arquivo                     | Etapa(s)    | Microserviço / função                                  |
+| --------------------------- | ----------- | ------------------------------------------------------ |
 | `comum.py`                  | —           | Módulo auxiliar (logs, subprocess, SHA-256, convenções) |
 | `validar_premis.py`         | — (apoio)   | Valida e inspeciona o `metadata/premis.xml` (PREMIS v3) |
 | `premis.xsd`                | — (apoio)   | PREMIS Preservation Metadata XML Schema v3.0           |
+| `metadados_descritivos.py`  | (inativo)   | Planilha CSV/ODS → Dublin Core XML                     |
 
 ## Convenções de diretório (Seção 7.1)
 
@@ -41,10 +46,6 @@ no código de retorno de cada microserviço (Seção 6.4).
                            arquivo em <objectCharacteristicsExtension>)
     └─ logs/              (logs de execução do orquestrador e saídas brutas
                            das ferramentas externas — evidência forense)
-
-> Observação: o diagrama da Seção 7.1 mostra `manifest-md5.txt` apenas a título
-> de exemplo; a Seção 5.5 estabelece o **SHA-256** como algoritmo padrão do
-> BagIt (RFC 8493), adotado aqui.
 
 ## Instalação
 
