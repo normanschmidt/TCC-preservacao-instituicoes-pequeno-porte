@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Se usar este software, cite conforme abaixo."
+title: "Fluxo de preservação digital para instituições de memória de pequeno porte"
+abstract: "Scripts em Python que implementam os microserviços MS1–MS9 do fluxo de trabalho de preservação digital."
+authors:
+  - family-names: "Schmidt Júnior"
+    given-names: "Norman"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"  # opcional
+version: 1.0.0
+date-released: 2026-06-15
+license: MIT   # troque pela licença escolhida
+repository-code: "https://github.com/USUARIO/REPO"

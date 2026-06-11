@@ -1,0 +1,61 @@
+# Dependências Python do workflow (Seção 5 do TCC).
+#
+# INSTALAÇÃO RECOMENDADA — ambiente virtual (Ubuntu 23.04+ exige isso por
+# causa do PEP 668; ver mensagem "externally-managed-environment"):
+#
+#     sudo apt install python3-venv python3-full
+#     cd workflow_preservacao
+#     python3 -m venv .venv
+#     source .venv/bin/activate
+#     pip install -r requirements.txt
+#
+# Ativação em sessões futuras:  source .venv/bin/activate
+# Desativação:                   deactivate
+#
+# Bibliotecas Python:
+bagit>=1.8        # MS6 — empacotamento (BagIt-Python, RFC 8493)
+lxml>=4.9         # MS7 — geração de PREMIS XML e Dublin Core XML
+odfpy>=1.4        # apoio a E3 — leitura de planilhas de metadados em ODS
+#
+# Wrappers opcionais (alternativas leves de caracterização, Seção 5.4):
+# pyexiftool>=0.5
+# pymediainfo>=6.1
+#
+# -------------------------------------------------------------------------
+# ALTERNATIVAS AO VENV (ver INSTALACAO.md, Parte 4.1)
+#
+# (a) Sem sudo, confinado ao usuário (~/.local/) — funciona sem ativar nada,
+#     pois o Python já inclui o user site-packages na busca de módulos:
+#         pip install --user --break-system-packages -r requirements.txt
+#
+# (b) Parcial via apt: lxml e odfpy têm pacotes no Ubuntu/Debian (note que o
+#     odfpy chama-se python3-odf), mas o BagIt-Python da Library of Congress
+#     NÃO está nos repositórios apt — só no PyPI. Logo, mesmo por apt o 'bagit'
+#     ainda exige venv ou pip:
+#         sudo apt install python3-lxml python3-odf
+#
+# pipx NÃO serve: ele isola aplicativos CLI e não expõe bibliotecas para
+# 'import' por outros scripts; o workflow importa bagit/lxml/odf como módulos.
+#
+# -------------------------------------------------------------------------
+# Utilitários externos do sistema (instalar via gerenciador de pacotes do
+# Linux, p. ex. apt). NÃO são pacotes Python:
+#
+#   clamav         (MS1  — varredura antivírus; comando: clamscan)
+#   openjdk-21-jre (dependência Java de DROID/FITS/JHOVE/veraPDF)
+#   droid          (MS2  — identificação de formato)        [ou siegfried]
+#   siegfried      (MS2  — alternativa ao DROID; comando: sf)
+#   jhove          (MS3  — validação de conformidade)       [+ verapdf]
+#   fits           (MS4  — extração de metadados; fits.sh)  [ou exiftool+mediainfo]
+#   libimage-exiftool-perl, mediainfo  (MS4 — alternativa leve)
+#   coreutils      (MS5  — sha256sum; nativo)               [+ hashdeep]
+#   hashdeep       (MS5  — verificação de árvores de diretórios)
+#   imagemagick    (MS9  — derivadas de imagem)
+#   libreoffice    (MS9  — derivadas de documentos textuais; soffice)
+#   ffmpeg         (MS9  — derivadas de áudio/vídeo)
+#   rsync          (MS8  — replicação local/rede local)
+#   rclone         (MS8  — replicação remota em nuvem)
+#   fuse3          (E10  — montar remoto rclone p/ verificar AIPs na nuvem)
+#   libxml2-utils  (apoio — xmllint, p/ validar premis.xml; ver validar_premis.py)
+#
+# Consulte INSTALACAO.md para os comandos detalhados.

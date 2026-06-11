@@ -1,0 +1,22 @@
+[
+  {
+    "rotulo": "primario_local",
+    "tipo": "local",
+    "caminho": "/srv/preservacao/aips_primario"
+  },
+  {
+    "rotulo": "secundario_rede_local",
+    "tipo": "local",
+    "caminho": "/mnt/nas/preservacao/aips"
+  },
+  {
+    "rotulo": "remoto_nuvem",
+    "tipo": "remoto",
+    "caminho": "backblaze:seu_bucket/aips"
+  },
+  {
+    "rotulo": "remoto_google_drive",
+    "tipo": "remoto",
+    "caminho": "gdrive:pasta_compartilhada/aips"
+  }
+]

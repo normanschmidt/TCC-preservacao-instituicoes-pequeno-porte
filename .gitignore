@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+# credenciais e config local
+rclone.conf
+*.conf
+.env
+# artefatos gerados e dados de teste
+/aips/
+/dips/
+/logs/
+/objetos-teste/
