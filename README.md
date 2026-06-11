@@ -25,9 +25,12 @@ no código de retorno de cada microserviço (Seção 6.4).
 
 | Arquivo                     | Etapa(s)    | Microserviço / função                                  |
 | --------------------------- | ----------- | ------------------------------------------------------ |
+| `README.md`                 | —           | Este arquivo                                           |
+| `INSTALACAO.md`             | —           | Guia de instalação em Ubuntu 26.04 LTS                 |
 | `comum.py`                  | —           | Módulo auxiliar (logs, subprocess, SHA-256, convenções) |
 | `validar_premis.py`         | — (apoio)   | Valida e inspeciona o `metadata/premis.xml` (PREMIS v3) |
 | `premis.xsd`                | — (apoio)   | PREMIS Preservation Metadata XML Schema v3.0           |
+| `requirements.txt`          | — (apoio)   | Dependências Python do workflow (Seção 5 do TCC)       |
 | `metadados_descritivos.py`  | (inativo)   | Planilha CSV/ODS → Dublin Core XML                     |
 
 ## Convenções de diretório (Seção 7.1)
