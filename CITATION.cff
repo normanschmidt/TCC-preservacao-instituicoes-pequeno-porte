@@ -5,8 +5,8 @@ abstract: "Scripts em Python que implementam os microserviços MS1–MS9 do flux
 authors:
   - family-names: "Schmidt Júnior"
     given-names: "Norman"
-    # orcid: "https://orcid.org/0000-0000-0000-0000"  # opcional
+    orcid: "https://orcid.org/0009-0002-7016-5858"
 version: 1.0.0
 date-released: 2026-06-15
-license: MIT   # troque pela licença escolhida
-repository-code: "https://github.com/USUARIO/REPO"
+license: "GPL-3.0-or-later"   # troque pela licença escolhida
+repository-code: "https://github.com/normanschmidt/TCC-preservacao-instituicoes-pequeno-porte"
